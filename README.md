@@ -262,6 +262,8 @@ int main(int argc, char* argv[])
 * [OWASP Buffer Overflow Attack]
 * [Veracode: What Is a Buffer Overflow? Learn About Buffer Overrun Vulnerabilities, Exploits & Attacks]
 * [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')]
+* [CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer]
+* [CWE-134: Use of Externally-Controlled Format String]
 
 [OWASP Buffer Overflow Attack]:https://owasp.org/www-community/attacks/Buffer_overflow_attack
 [Veracode: What Is a Buffer Overflow? Learn About Buffer Overrun Vulnerabilities, Exploits & Attacks]:https://www.veracode.com/security/buffer-overflow
