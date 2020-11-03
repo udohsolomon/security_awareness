@@ -9,7 +9,7 @@ To effectively mitigate buffer overflow vulnerabilities, it is important to unde
 
 ## Vulnerabilities
 
-## gets()
+## 1. gets()
 The stdio gets() function does not check for buffer length and always results in a vulnerability.
 
 ```c
@@ -62,7 +62,7 @@ int main () {
     return 0;
 }
 ```
-## strcpy
+## 2. strcpy
 The strcpy built-in function does not check buffer lengths and may very well overwrite memory zone contiguous to the intended destination. In fact, the whole family of functions is similarly vulnerable: strcpy, strcat and strcmp.
 ```c
 char str1[10];
@@ -97,7 +97,7 @@ int main() {
     return 0;
 }
 ```
-## sprintf
+## 3. sprintf
 Just as the previous functions, sprintf does not check the buffer boundaries and is vulnerable to overflows.
 ```c
 #include <stdio.h>
@@ -136,7 +136,7 @@ int main() {
     return EXIT_SUCCESS;
 }
 ```
-## printf
+## 4. printf
 One other vulnerability category is concerned with string formatting attacks, those can cause information leakage, overwriting of memory, … This error can be exploited in any of the following functions: printf, fprintf, sprintf and snprintf, i.e. all functions that take a “format string” as argument.
 
 ```c
@@ -164,7 +164,7 @@ $
 ### Mitigation
 It's really simple: always hardcode the format string. At least, never let it come directly from any user's input.
 
-## File opening
+## 5. File opening
 Much care must be taken when opening files, as many issues can arise. Out of the many ways file handling can be attacked, we will only present two brief examples below.
 
 ### Symbolic link attack
