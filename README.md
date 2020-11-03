@@ -253,6 +253,7 @@ int main(int argc, char* argv[])
 | sprintf()     | bcopy()       |
 | scanf()       | bzero()       |
 | sscanf()      | memcpy(), memset()|
+
 5. Be especially careful programming and/or installing setuid root programs and programs that run as root. These are the programs that allow an attacker to acquire a root shell.
 6. Be careful when using for and while loops that copy data from one variable to another. Make sure the bounds are checked.
 7. Review legacy software code for security problems.
