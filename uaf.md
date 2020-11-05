@@ -30,7 +30,7 @@ if (message_type == value_2) {
   free(message);
 }
 ```
-## Mitagation
+## Mitigation
 Calling ```free()``` on a null pointer results in no action being taken by ```free()```. Setting message to ```NUL```L after it is freed eliminates the possibility that the message pointer can be used to free the same memory more than once.
 
 ```c
