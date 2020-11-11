@@ -56,7 +56,7 @@ def move(request):
 ```
 
 ## Risk Assessment
-he technical impact is attackers acting as users or administrators, or users using privileged functions, or creating, accessing, updating or deleting every record.
+The technical impact is attackers acting as users or administrators, or users using privileged functions, or creating, accessing, updating or deleting every record.
 The business impact depends on the protection needs of the application and data.
 
 
