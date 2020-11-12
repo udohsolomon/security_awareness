@@ -3,7 +3,7 @@
 ## Description
 Buffer overflows are probably one of the most vicious tools available to an attacker. A small honest mistake made by a developer with SETUID root permissions can mean catastrophe. 
 
-A buffer overflow is the technique of overwriting machine code with an attackers own code, this occurs when a program takes input from a user in low-level languages such as c, c++ without checking its size. It can be used to gain root access.
+A buffer overflow is the technique of overwriting machine code with an attackers own code, this occurs when a program takes input from a user in low-level languages such as ```c```, ```c++``` without checking its size. It can be used to gain root access.
 
 To effectively mitigate buffer overflow vulnerabilities, it is important to understand what buffer overflows are, what dangers they pose to your applications, and what techniques attackers use to successfully exploit these vulnerabilities.
 
