@@ -15,12 +15,6 @@ XML External Entity (XXE) attacks can occur when an XML parser supports XML enti
 ```
 ### Risk 2: Denial of service (XEE: XML Entity Expansion)
 ```java
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE foo [
-   <!ENTITY xxe SYSTEM "file:///etc/passwd" > ]>
-<foo>&xxe;</foo>
-```
-```java
 <?xml version="1.0"?>
 <!DOCTYPE lolz [
  <!ENTITY lol "lol">
@@ -33,6 +27,7 @@ XML External Entity (XXE) attacks can occur when an XML parser supports XML enti
 ]>
 <lolz>&lol9;</lolz>
 ```
+
 
 ## Vulnerable Code Example 1
 
