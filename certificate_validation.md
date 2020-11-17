@@ -34,7 +34,7 @@ let req = https.request(options, (res) => {
 ```
 tls built-in module:
 
-```jave
+```java
 let options = {
     secureProtocol: 'TLSv1_2_method',
     rejectUnauthorized: false ; // Noncompliant
