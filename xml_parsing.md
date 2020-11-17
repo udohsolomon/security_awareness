@@ -20,6 +20,7 @@ XML External Entity (XXE) attacks can occur when an XML parser supports XML enti
    <!ENTITY xxe SYSTEM "file:///etc/passwd" > ]>
 <foo>&xxe;</foo>
 ```
+```java
 <?xml version="1.0"?>
 <!DOCTYPE lolz [
  <!ENTITY lol "lol">
@@ -31,6 +32,7 @@ XML External Entity (XXE) attacks can occur when an XML parser supports XML enti
  <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
 ]>
 <lolz>&lol9;</lolz>
+```
 
 ## Vulnerable Code Example 1
 
