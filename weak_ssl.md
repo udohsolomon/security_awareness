@@ -9,7 +9,7 @@ This rule raises an issue when an SSL/TLS context is created with an insecure pr
 secureProtocol, minVersion/maxVersion and secureOptions should not be set to use weak TLS protocols (TLSv1.1 and lower):
 
 
-```java
+```javascript
 let options = {
   secureProtocol: 'TLSv1_method' // Noncompliant: TLS1.0 is insecure
 };
@@ -32,12 +32,12 @@ let req = https.request(options, (res) => {
 });  // Noncompliant
 ```
 ### tls built-in module:
-```java
+```javascript
 let socket = tls.connect(443, "www.example.com", options, () => { });  // Noncompliant
 ```
 ### request module:
 
-```java
+```javascript
 let socket = request.get(options);
 ```
 
@@ -46,7 +46,7 @@ let socket = request.get(options);
 Set either secureProtocol or secureOptions or minVersion to use secure protocols only (TLSv1.2 and higher):
 
 
-```java
+```javascript
 let options = {
   secureProtocol: 'TLSv1_2_method'
 };
