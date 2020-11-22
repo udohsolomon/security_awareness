@@ -16,7 +16,7 @@ TLS libraries provide built-in certificate validation functions that should be u
 There is no way to disable certificate verification in tls, https and request modules but it is possible to not reject request when verification fails.
 
 https built-in module:
-```java
+```javascript
 let options = {
   hostname: 'www.example.com',
   port: 443,
@@ -34,7 +34,7 @@ let req = https.request(options, (res) => {
 ```
 tls built-in module:
 
-```java
+```javascript
 let options = {
     secureProtocol: 'TLSv1_2_method',
     rejectUnauthorized: false ; // Noncompliant
@@ -47,7 +47,7 @@ let socket = tls.connect(443, "www.example.com", options, () => {
 ```
 request module:
 
-```java
+```javascript
 let socket = request.get({
     url: 'www.example.com',
     secureProtocol: 'TLSv1_2_method',
@@ -58,7 +58,7 @@ let socket = request.get({
 ## Mitigation
 https built-in module:
 
-```java
+```javascript
 let options = {
   hostname: 'www.example.com',
   port: 443,
@@ -75,7 +75,7 @@ let req = https.request(options, (res) => {
 ```
 tls built-in module:
 
-```java
+```javascript
 let options = {
     secureProtocol: 'TLSv1_2_method'
 };
@@ -87,7 +87,7 @@ let socket = tls.connect(443, "www.example.com", options, () => {
 ```
 request module:
 
-```java
+```javascript
 let socket = request.get({
     url: 'https://www.example.com/',
     secureProtocol: 'TLSv1_2_method' // Compliant
