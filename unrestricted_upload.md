@@ -10,7 +10,7 @@ Also the size of the uploaded file should be limited to prevent denial of servic
 ## Vulnerable Code Example
 ### formidable module:
 
-```java
+```javascript
 const Formidable = require('formidable');
 
 const form = new Formidable(); // Noncompliant, this form is not safe
@@ -19,7 +19,7 @@ form.keepExtensions = true; // and file extensions are kept
 ```
 ### multer (Express.js middleware) module:
 
-```java
+```javascript
 const multer = require('multer');
 
 let diskStorage = multer.diskStorage({ // Noncompliant: no destination specified
@@ -32,7 +32,7 @@ let diskStorage = multer.diskStorage({ // Noncompliant: no destination specified
 ## Mitigation
 ### formidable module:
 
-```java
+```javascript
 const Formidable = require('formidable');
 
 const form = new Formidable(); // Compliant
@@ -41,7 +41,7 @@ form.keepExtensions = false;
 ```
 ### multer (Express.js middleware) module:
 
-```java
+```javascript
 const multer = require('multer');
 
 let diskStorage = multer.diskStorage({  // Compliant
