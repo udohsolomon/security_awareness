@@ -8,7 +8,7 @@ If a JSON Web Token (JWT) is not signed with a strong cipher algorithm (or not s
 
 ## Vulnerable Code Example
 jsonwebtoken library:
-```java
+```javascript
 const jwt = require('jsonwebtoken');
 let token = jwt.sign({ foo: 'bar' }, key, { algorithm: 'none' }); // Noncompliant: JWT should include a signature
 jwt.verify(token, key, { expiresIn: 360000 * 5, algorithms: ['RS256', 'none'] }, callbackcheck); // Noncompliant: none algorithm should not be used when verifying JWT signature
@@ -16,7 +16,7 @@ jwt.verify(token, key, { expiresIn: 360000 * 5, algorithms: ['RS256', 'none'] },
 
 ## Mitigation
 jsonwebtoken library:
-```java
+```javascript
 const jwt = require('jsonwebtoken');
 let token = jwt.sign({ foo: 'bar' }, key, { algorithm: 'HS256' }); // Compliant
 jwt.verify(token, key, { expiresIn: 360000 * 5, algorithms: ['HS256'] }, callbackcheck); // Compliant
