@@ -146,7 +146,7 @@ One other vulnerability category is concerned with string formatting attacks, th
 int main(int argc, char **argv) {
     char *secret = "This is a secret!\n";
  
-    printf external link(argv[1]);
+    printf(argv[1]);
  
     return 0;
 }
@@ -182,7 +182,7 @@ int main(int argc, char* argv[])
 {
     FILE * f;
     if (!access(MY_TMP_FILE, F_OK)) {
-        printf external link("File exists!\n");
+        printf("File exists!\n");
         return EXIT_FAILURE;
     }
     /* At this point the attacker creates a symlink from /tmp/file.tmp to /etc/passwd */
