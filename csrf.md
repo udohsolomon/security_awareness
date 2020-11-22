@@ -21,7 +21,7 @@ Recommended Secure Coding Practices
 ## Vulnerable Code Example
 Express.js CSURF middleware protection is not found on an unsafe HTTP method like POST method:
 
-```java
+```javascript
 let csrf = require('csurf');
 let express = require('express');
 
@@ -41,7 +41,7 @@ Protection provided by Express.js CSURF middleware is globally disabled on unsaf
 Express.js CSURF middleware protection is used on unsafe methods:
 
 
-```java
+```javascript
 let csrf = require('csurf');
 let express = require('express');
 
