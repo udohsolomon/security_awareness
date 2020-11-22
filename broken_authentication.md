@@ -23,7 +23,7 @@ Recommended Secure Coding Practices
 
 ## Vulnerable Code Example
 
-```java
+```javascript
 var mysql = require('mysql');
 
 var connection = mysql.createConnection(
@@ -41,7 +41,7 @@ connection.connect();
 
 ## Mitigation
 
-```java
+```javascript
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
