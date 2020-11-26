@@ -24,7 +24,7 @@ The typosquatter's URL will usually be one of four kinds, all similar to the vic
 * A misspelling based on typos: examlpe.com
 * A differently phrased domain name: examples.com
 * A different top-level domain: example.org
-* An abuse of the Country Code Top-Level Domain (ccTLD): example.cm by using .cm, example.co by using .co, or example.om by using .om. A person leaving out a letter in .com in error could arrive at the fake URL's website.
+* Any abuse of the Country Code Top-Level Domain (ccTLD): example.cm by using .cm, example.co by using .co, or example.om by using .om. A person leaving out a letter in .com in error could arrive at the fake URL's website.
 
 Once in the typosquatter's site, the user may also be tricked into thinking that they are in fact in the real site, through the use of copied or similar logos, website layouts, or content. Spam emails sometimes make use of typosquatting URLs to trick users into visiting malicious sites that look like a given bank's site, for instance."
 
