@@ -90,6 +90,9 @@ router.post('/register-user', function(req, res, next){
    });
 
 ```
+## Risk Assessment
+
+The impact of this flaw is high, if the attacker can gain access to an administrator account, it will be able to gain full access to the application's data. Depending on the domain of the application, this flaw could lead to the exfiltration of sensitive information, identity theft, and fraud.
 
 ## Recommendations
 
