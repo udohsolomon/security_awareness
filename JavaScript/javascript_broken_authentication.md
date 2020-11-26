@@ -1,10 +1,12 @@
 # Broken Authentication Flaws in JavaScript
 
-Attackers will try to break into authentication components such as cookies, sessions and tokens to be able to impersonate other users or perform horizontal and lateral movements (for instance accessing a feature that is just enabled for an administrator role).
+## Description
+
+Attackers will try to break into authentication components such as cookies, sessions, and tokens to be able to impersonate other users or perform horizontal and lateral movements (for instance accessing a feature that is just enabled for an administrator role).
 
 Flaws in authentication mechanisms involve weak password policies, storing credentials in plain text in the databases, improper session expiration (and timeouts), security questions, account updates and so on
 
-## Examples of Broken Authentication Flaws
+## Vulnerable Code Example
 
 Storing passwords in plain text in a database is a security risk that could allow an attacker to get access to other user accounts. The following code is an example of incorrect password storage:
 
@@ -42,6 +44,8 @@ router.post('/register-user', function(req, res, next){
 });
 ```
 This code, although seems to perform a correct input data validation (you can tell it because request parameters are sanitized and escaped), is storing the password in clear text in the database without doing any sort of hashing.
+
+## Mitigation
 
 A more secure implementation would be like using an industry-standard password hashing algorithm such as *bcrypt*. Following code shows a better implementation:
 
@@ -87,11 +91,15 @@ router.post('/register-user', function(req, res, next){
 
 ```
 
-# Recommendations
+## Recommendations
 
 When implementing authentication schemas, it's highly recommended to review and follow the [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/). Section V2 Authentication Verification Requirements provides a good perspective on the elements to consider at the time of implementing such controls.
 
 For node.js applications, it's recommended to implement and use an authentication middleware such as [passportjs](http://www.passportjs.org/) for authentication-related activities.
 
+## References
 
+[A2:2017-Broken Authentication](https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication)
+
+[OWASP Application Security Verification Standard] (https://github.com/OWASP/ASVS)
 

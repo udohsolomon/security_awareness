@@ -12,7 +12,7 @@ Here is a quick summary of the most critical Web Application Security Risks.
 
 ## A1 - Injection Attacks
 
-As its name implies, an Injection Attack happens when an application fails to perform a correct input data validation (input data is not validated, filtered or sanitized by the application), allowing a threat actor to send arbitrary or hostile data to the server. There are multiple attack vectors related to Injection Attacks, such as:
+As its name implies, an Injection Attack happens when an application fails to perform a correct input data validation (input data is not validated, filtered, or sanitized by the application), allowing a threat actor to send arbitrary or hostile data to the server. There are multiple attack vectors related to Injection Attacks, such as:
 
 * SQL Injection
 * LDAP Injection

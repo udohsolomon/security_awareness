@@ -1,15 +1,19 @@
 # JavaScript Injection Attacks
 
+## Description
+
 Injection attacks occur when a malicious user sends untrusted data to an interpreter as part of a parameter or query. This way, the attacker's malicious/hostile payload will execute unintended commands that the interpreter will perform, leading to access unauthorized access and leaking of sensitive information to unauthorized parties .
 
-## Server-Side JavaScript Injections (SSJI)
+## 1. Server-Side JavaScript Injections (SSJI)
 
 When running JavaScript code on the server-side (using languages such as Node.js for instance), an injection attack could lead to a full compromise of the application. Some well-known JavaScript functions are considered evil in the sense that they could allow an attacker to run arbitrary code or cause denial-of-service conditions, these functions are:
 * eval()
 * setTimeOut()
 * setInterval(),
 * Function()
-  
+
+## Vulnerable Code Example
+
 Here is an example of a vulnerable code based on [this article](https://hydrasky.com/network-security/server-side-javascript-injection-ssjs/)
 
 ```node
@@ -49,7 +53,7 @@ res.end(require('fs').readFileSync(filename))
 ```
 Since the attacker can now server-side list directories, if configuration files are deployed she will be able to traverse them and get access to sensitive information.
 
-## How to prevent Server-Side JavaScript Injections (SSJI) attacks?
+## Mitigation
 
 This type of injection attack can be prevented by performing a proper input data validation, and never trusting user's input.
 
@@ -61,13 +65,15 @@ var tax  = parseInt(req.body.tax);
 ```
 Additionally, developers should be using the ``` use strict``` directive at the beginning of a function to enable [JavaScript strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
-# SQL Injection attacks in JavaScript
+# 2. SQL Injection attacks in JavaScript
 
 Similar to other programming languages, when JavaScript code executes in the server-side and proper input data validation is not performed, it could lead to SQL Injection Attacks. 
 
 As stated by OWASP, SQL Injection attacks occur when an attacker injects SQL statements via the input data from the client to the application to affect the execution of predefined SQL statements and commands.
 
 [NPM (Node Package Manager) libraries](https://www.npmjs.com/advisories/1146) have found to be vulnerable to this type of flaws.
+
+## Vulnerable Code Example
 
 Snyk folks published a PoC for this attack, here is the vulnerable code they published:
 
@@ -102,9 +108,9 @@ Project.init({
 })();
 
 ```
-As explained in the [advisory](https://snyk.io/vuln/SNYK-JS-SEQUELIZE-459751), sequelize.json() helper function not escaping values properly when formatting sub-paths for JSON queries for MySQL, MariaDB and SQLite.
+As explained in the [advisory](https://snyk.io/vuln/SNYK-JS-SEQUELIZE-459751), sequelize.json() helper function not escaping values properly at formatting sub-paths for JSON queries for MySQL, MariaDB and SQLite.
 
-## Recommendations
+## Mitigation
 
 When using third-party libraries, make sure to review the security advisories available by third-parties, also it is important to do a risk assessment that can take into consideration the activity of the project, the security issues reported, and the fix ratio of defects.
 
@@ -136,7 +142,7 @@ connection.query("SELECT * FROM account_history WHERE account_owner = :account_o
 
 ```
 
-Veracode folks have a great article that covers this scenarios please check it out [here](https://www.veracode.com/blog/secure-development/how-prevent-sql-injection-nodejs).
+Veracode folks have a great article that covers this scenarios, please check it out [here](https://www.veracode.com/blog/secure-development/how-prevent-sql-injection-nodejs).
 
 ## References
 
