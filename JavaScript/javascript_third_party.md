@@ -1,4 +1,4 @@
-# Managing Third-Party JavaScript Libraries
+# Using Components with Known Vulnerabilities
 
 # Description
 
@@ -30,7 +30,7 @@ Once in the typosquatter's site, the user may also be tricked into thinking that
 
 Note that the previous definition not only applies to domain names, it can be used to deceive the user with names or strings that look very similar to what the user is looking for.
 
-# The malware code
+# Code examples
 
 In this real scenario, the attacker created several npm packages with a similar name (typosquatting) to the original package, but those packages published by the threat actor, contained additional code that exfiltrated secrets and environment variables during the installation hook in npm. The malware code looked like this:
 
@@ -60,7 +60,7 @@ req.end();
 ```
 As you can see in this code, the threat actor added a post-installation script that accessed environment variables and pushed them to a controlled domain. Commonly, developers store sensitive data and secrets (API keys, cloud provider credentials, ssh keys) in environment variables; by installing this package without doing a proper code review, could introduce multiple problems.
 
-# Recommendations when relying on third-party JavaScript packages
+# Mitigation
 
 Here are some good recommendations for doing a proper patching process:
 
@@ -70,6 +70,9 @@ Here are some good recommendations for doing a proper patching process:
 * Monitor for libraries and components that are unmaintained or do not create security patches for older versions. If patching is not possible, consider deploying a virtual patch to monitor, detect, or protect against the discovered issue.
 Every organization must ensure that there is an ongoing plan for monitoring, triaging, and applying updates or configuration changes for the lifetime of the application or portfolio.
 
+## Risk Assessment
+
+Vulnerabilities on some known libraries could have a low impact low whereas others could cause a large breach. Depending on the assets being protected, the impact could be low or severe.
 
 # References
 
