@@ -144,6 +144,10 @@ connection.query("SELECT * FROM account_history WHERE account_owner = :account_o
 
 Veracode folks have a great article that covers this scenarios, please check it out [here](https://www.veracode.com/blog/secure-development/how-prevent-sql-injection-nodejs).
 
+## Risk Assessment
+
+Injection attacks always have a critical impact to the organization,resulting in data loss, corruption, disclosure to unauthorized parties and even it can lead to a full host takeover.
+
 ## References
 
 [Snyk  SQL Injection Advisory](https://snyk.io/vuln/SNYK-JS-SEQUELIZE-459751)
