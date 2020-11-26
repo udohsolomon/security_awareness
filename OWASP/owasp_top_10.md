@@ -58,11 +58,13 @@ The following code represents a session management security issue
 
 ```node
 function addUser(){
+  
     var user = {
-    userName  : userName,
-    firstName : firstName,
-    lastName  : lastName,
-    password  : password  
+        userName  : userName,
+        firstName : firstName,
+        lastName  : lastName,
+        password  : password 
+    } 
 
     this.persistUserData(user, callback)({
         // do other stuff
