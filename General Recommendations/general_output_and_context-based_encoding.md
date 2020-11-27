@@ -14,7 +14,7 @@ Here is an example of escaping double quotes in the python language.
 text = "This is a text \"very\" extense"
 ```
 
-To defeat security flaws such as Cross-Site Scripting (XSS), *Contextual Output Encoding* has been a very good code dense. This technique consists on applying the encoding functions just before it is output.
+To defeat security flaws such as Cross-Site Scripting (XSS), *Contextual Output Encoding* has been a very good code defense. This technique consists on applying the encoding functions just before it is output.
 
 It is called contextual encoding because the type of encoding will depend on the location (context) in the HTML where the output will be rendered. Some of these contexts are:
 * HTML Entity Encoding
