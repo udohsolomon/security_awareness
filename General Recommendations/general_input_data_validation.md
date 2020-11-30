@@ -2,7 +2,7 @@
 
 ## Description
 
-From its definition, a software program consists of an input, a processing layer and an output. Input is essential for a program to work properly. However, this input can come from multiple places: from the end-user via HTTP methods or HTML forms, via HTTP headers and cookies, from external entities such as third-parties via Web Services invocations, and even from other applications via database queries. 
+From its definition, a software program consists of an input, a processing layer, and an output. Input is essential for a program to work properly. However, this input can come from multiple places: from the end-user via HTTP methods or HTML forms, via HTTP headers and cookies, from external entities such as third-parties via Web Services invocations, and even from other applications via database queries. 
 
 This dynamic nature of input data requires developers to adopt a security posture at the time of writing code; that is a defensive programming style where input data is properly validated before it is being processed. This posture needs to be applied in the front-end layer (via client-side validations of the input) and at the back-end logic (since most of the time threat actors won't use a Web browser to interact with the application).
 

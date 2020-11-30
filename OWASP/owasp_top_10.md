@@ -12,7 +12,7 @@ Here is a quick summary of the most critical Web Application Security Risks.
 
 ## A1 - Injection Attacks
 
-As its name implies, an Injection Attack happens when an application fails to perform a correct input data validation (input data is not validated, filtered or sanitized by the application), allowing a threat actor to send arbitrary or hostile data to the server. There are multiple attack vectors related to Injection Attacks, such as:
+As its name implies, an Injection Attack happens when an application fails to perform a correct input data validation (input data is not validated, filtered, or sanitized by the application), allowing a threat actor to send arbitrary or hostile data to the server. There are multiple attack vectors related to Injection Attacks, such as:
 
 * SQL Injection
 * LDAP Injection
@@ -58,11 +58,13 @@ The following code represents a session management security issue
 
 ```node
 function addUser(){
+  
     var user = {
-    userName  : userName,
-    firstName : firstName,
-    lastName  : lastName,
-    password  : password  
+        userName  : userName,
+        firstName : firstName,
+        lastName  : lastName,
+        password  : password 
+    } 
 
     this.persistUserData(user, callback)({
         // do other stuff
@@ -90,14 +92,14 @@ Encrypting sensitive data is key to protect it from unauthorized access and tamp
 Sensitive data exposure also occurs when the developers hardcodes tokens, secrets, api keys or passwords within the source code of the application or when sensitive data is being logged in server logs.
 
 ### Recommendations
-OWASP Provides the following recommendations:
+OWASP provides the following recommendations:
 
 * Classify data processed, stored, or transmitted by an
 application. Identify which data is sensitive according to privacy laws, regulatory requirements, or business needs.
 * Don’t store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant tokenization or even truncation. Data that is not retained cannot be stolen.
 * Make sure to encrypt all sensitive data at rest.
 * Ensure up-to-date and strong standard algorithms, protocols, and keys are in place; use proper key management.
-* Encrypt all data in transit with secure protocols such as TLS with perfect forward secrecy (PFS) ciphers, cipher prioritization by the server, and secure parameters. Enforce encryption using directives like HTTP Strict Transport Security (HSTS).
+* Encrypt all data in transit with security protocols such as TLS with perfect forward secrecy (PFS) ciphers, cipher prioritization by the server, and secure parameters. Enforce encryption using directives like HTTP Strict Transport Security (HSTS).
 * Disable caching for responses that contain sensitive data.
 * Store passwords using strong adaptive and salted hashing functions with a work factor (delay factor), such as Argon2, scrypt, bcrypt, or PBKDF2.
 
@@ -129,7 +131,7 @@ And remote code execution:
 ```
 
 
-These type of vulnerabilities usually have a significant impact and therefore they are classified as critical. Here are some examples of some disclosed vulnerabilities and it's impact.
+These types of vulnerabilities usually have a significant impact and therefore they are classified as critical. Here are some examples of some disclosed vulnerabilities and it impacts.
 
 * [CVE-2020-25257]https://nvd.nist.gov/vuln/detail/CVE-2020-25257
 * [CVE-2019-9670 Detail]https://nvd.nist.gov/vuln/detail/CVE-2019-9670
@@ -203,7 +205,7 @@ A segmented application architecture that provides effective and secure separati
 
 XSS attacks happen when a malicious user sends hostile data to a Web application without proper input data validation and sanitization.
 Typically there are three types of XSS flaws:
-* Reflected XSS: User's untrusted data is sent as part of a HTML output, allowing an attacker to execute arbitrary JavaScript code in the user's browser.
+* Reflected XSS: The user's untrusted data is sent as part of a HTML output, allowing an attacker to execute arbitrary JavaScript code in the user's browser.
 * Stored XSS: The application stores user's data without performing any sort of validation, sanitization or escaping; later another user will access the data and the payload will be rendered, stealing sensitive information, redirecting the user to an attacker's controlled domain.
 * DOM-based XSS: JavaScript frameworks, single-page applications, and APIs that dynamically include attacker-controllable data to a page are vulnerable to DOM XSS. Ideally, the application would not send attacker-controllable data to unsafe JavaScript APIs.
 
@@ -215,7 +217,7 @@ OWASP security best practices recommends:
 
 * Using frameworks that automatically escape XSS by design, such as the latest Ruby on Rails, React JS. Learn the limitations of each framework’s XSS protection and appropriately handle the use cases which are not covered.
 * Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities. The OWASP Cheat Sheet 'XSS Prevention' has details on the required data escaping techniques.
-* Applying context-sensitive encoding when modifying the browser document on the client side acts against DOM XSS. When this cannot be avoided, similar context sensitive escaping techniques can be applied to browser APIs as described in the OWASP Cheat Sheet ‘DOM based XSS Prevention’.
+* Applying context-sensitive encoding when modifying the browser document on the client side acts against DOM XSS. When this cannot be avoided, similar context-sensitive escaping techniques can be applied to browser APIs as described in the OWASP Cheat Sheet ‘DOM based XSS Prevention’.
 * Enabling a Content Security Policy (CSP) as a defense-in-depth mitigating control against XSS. It is effective if no other vulnerabilities exist that would allow placing malicious code via local file includes (e.g. path traversal overwrites or vulnerable libraries from permitted content delivery networks).
 
 ## A8 - Insecure Deserialization
@@ -252,7 +254,7 @@ Multiple libraries have found vulnerable and by adding them to our projects, ind
 Adding a library that has been modified by a threat actor could lead to exposure of sensitive information, arbitrary code execution, backdoors and multiple other risks affecting the organization.
 
 ### Recommendations
-* Always keep an inventory of the third party libraries (and versions) being used across multiple projects.
+* Always keep an inventory of the third-party libraries (and versions) being used across multiple projects.
 * Perform a security code review on the source code of the application before using it.
 * Keep the libraries up to date, visit public available vulnerability advisories.
 * Use packages and libraries from official sources.
